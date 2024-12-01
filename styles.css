@@ -1,0 +1,273 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    background-color: #6c63ff;
+    color: white;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ffdb58;
+}
+
+.intro {
+    margin-top: 20px;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+}
+
+.btn-cta {
+    background-color: #ffdb58;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #ffdb58;
+}
+
+/* Eagle Animation */
+.eagle-animation {
+    position: absolute;
+    top: 150px;
+    left: -150px;
+}
+
+.eagle {
+    width: 400px;
+    animation: flyEagle 20s linear infinite;
+}
+
+@keyframes flyEagle {
+    0% {
+        transform: translateX(-150px) translateY(0);
+    }
+    25% {
+        transform: translateX(300px) translateY(-55px);
+    }
+    50% {
+        transform: translateX(600px) translateY(50px);
+    }
+    75% {
+        transform: translateX(900px) translateY(-55px);
+    }
+    100% {
+        transform: translateX(1400px) translateY(0);
+    }
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #6c63ff;
+}
+
+/* Experiencia */
+.experiencia-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.experiencia-item:hover {
+    transform: translateY(-5px);
+}
+
+.details {
+    max-height: 0; /* Oculta los detalles */
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Transición suave */
+    color: #555;
+    margin-top: 10px;
+}
+
+.details.visible {
+    max-height: 500px; /* Ajusta según el contenido */
+}
+
+/* Habilidades */
+.habilidad {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.habilidad img {
+    width: 60px;
+    height: auto;
+}
+
+.progress-bar {
+    width: 0;
+    height: 20px;
+    background-color: #ccc;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    width: var(--progress-width, 0);
+    height: 100%;
+    background-color: #6c63ff;
+    position: absolute;
+}
+
+progress {
+    width: 100%;
+    max-width: 900px;
+    height: 20px;
+    border-radius: 25px;
+    appearance: none;
+    background-color: #e0e0e0;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 25px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #5705f0;
+    border-radius: 25px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #5705f0;
+    border-radius: 25px;
+}
+
+/* Contacto */
+.contacto {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;  /* Centra los iconos */
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 50px;  /* Tamaño grande para los iconos */
+    margin: 0 15px;  /* Espaciado entre los iconos */
+    color: #6c63ff;  /* Color base verde */
+    transition: all 0.3s ease-in-out;  /* Transición suave para interacciones */
+    text-decoration: none;  /* Quita subrayado */
+    display: inline-block;
+    border-radius: 50%;  /* Hace que el fondo sea redondeado */
+    padding: 10px;  /* Espaciado interno */
+    background-color: rgba(0, 0, 0, 0.1);  /* Fondo sutil */
+}
+
+/* Efecto al pasar el cursor */
+.social-icon:hover {
+    color: white;  /* Cambia el color del icono a blanco */
+    background-color: #6c63ff;  /* Fondo verde al hacer hover */
+    transform: scale(1.2);  /* Aumenta ligeramente el tamaño del icono */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Sombra suave al hacer hover */
+}
+
+/* Asegurarse de que la sección esté visible */
+#contacto {
+    display: block;
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;  /* Centra verticalmente el contenido de la cabecera */
+    padding: 0px;
+}
+
+.foto-cabecera {
+    width: 30px;  /* Ajusta el ancho de la imagen */
+    height: 10px;  /* Ajusta la altura de la imagen */
+    border-radius: 10%;  /* Hace que la imagen tenga forma circular */
+    margin-right: 80px;  /* Añade espacio a la derecha de la imagen */
+}
+
+header img {
+    width: 100px; /* Ajusta este valor según necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y los títulos */
+    display: inline-block; /* Permite que la imagen esté alineada con el texto */
+  }
+  
+  header h1, header h2 {
+    display: inline-block; /* Alinea los títulos junto a la imagen */
+    vertical-align: middle; /* Alinea verticalmente el texto con la imagen */
+  }
+  
+/* Estilos para el botón */
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffdb58; /* Color de fondo */
+    color: #080808; /* Color del texto */
+    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover cuando el ratón pasa por encima */
+.btn-cta:hover {
+    background-color: #6c63ff; /* Color de fondo cuando se pasa el ratón */
+}
+
